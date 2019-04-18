@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>Show Detail</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Detail</h1>
+      <div th:object="${movie}">
+        <div>
+          <label>ID</label>
+          <p th:text="*{id}"></p>
+        </div>
+        <div>
+          <label>Title</label>
+          <p th:text="*{title}"></p>
+        </div>
+        <div>
+          <label>Running Time</label>
+          <p th:text="*{running_time}"></p>
+        </div>
+        <div>
+          <label>Production Year</label>
+          <p th:text="*{production_year}"></p>
+        </div>
+        <div>
+          <label>Country of Origin</label>
+          <p th:text="*{country_of_origin}"></p>
+        </div>
+        <div>
+        	<label>Distributing Agency</label>
+        	<p th:text="*{distributing_agency}"></p>
+        </div>
+        <div>
+        	<label>Cast</label>
+        	<p th:text="*{cast}"></p>
+        </div>
+        <div>
+        	<label>image</label>
+        	<p th:text="*{image}"></p>
+        </div>
+      </div>
+      <div>
+        <a class="btn btn-default" th:href="@{/movies/{id}/edit(id=*{id})}">edit</a>
+      </div>
+      <div class="pull-right">
+        <a class="btn btn-link" href="/movies">index</a>
+      </div>
+    </div>
+  </body>
+</html>

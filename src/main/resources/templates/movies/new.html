@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>Movies</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie</h1>
+      <form th:action="@{/movies}" th:method="post">
+        <div class="form-group">
+          <label class="control-label">Title</label>
+          <input class="form-control" type="text" name="title" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Running Time</label>
+          <input class="form-control" type="number" name="running_time" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Production Year</label>
+          <input class="form-control" type="text" name="production_year" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Country of Origin</label>
+          <input class="form-control" type="text" name="country_of_origin" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Distributing Agency</label>
+          <input class="form-control" type="text" name="distributing_agency" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Cast</label>
+          <input class="form-control" type="text" name="cast" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Image</label>
+          <input class="form-control" type="text" name="image" />
+        </div>
+        <button class="btn btn-default" type="submit">create</button>
+      </form>
+      <div class="pull-right">
+        <a class="btn btn-link" href="/movies">list</a>
+      </div>
+    </div>
+  </body>
+</html>
