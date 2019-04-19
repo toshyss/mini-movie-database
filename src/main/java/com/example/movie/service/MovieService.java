@@ -1,7 +1,6 @@
 package com.example.movie.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +17,12 @@ public class MovieService {
 		return movieRepository.findAll();
 	}
 	
-	public Optional<Movie> findOne(Long id) {
-		return movieRepository.findById(id);
+//	public Optional<Movie> findOne(Long id) {
+//		return movieRepository.findById(id);
+//	}
+	
+	public Movie findOne(Long id) {
+		return movieRepository.findById(id).orElseThrow(null);
 	}
 	
 	public Movie save(Movie movie) {

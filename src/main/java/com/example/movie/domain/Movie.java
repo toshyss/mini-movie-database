@@ -1,22 +1,30 @@
 package com.example.movie.domain;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotEmpty
 	private String title;
+	@NotEmpty
+	@Size(max = 5)
 	private String running_time;
+	@NotEmpty
+	@Size(max = 4)
 	private String production_year;
+	@NotEmpty
 	private String country_of_origin;
+	@NotEmpty
 	private String distributing_agency;
+	@NotEmpty
 	private String cast;
 	private String image;
 	
@@ -81,6 +89,7 @@ public class Movie {
 		this.image = image;
 	}
 	
+	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", title=" + title + 
 				", running_time=" + running_time + 

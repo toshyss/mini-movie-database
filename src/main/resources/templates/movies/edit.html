@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Editing Movie</h1>
+      <h1>Edit</h1>
       <form th:action="@{/movies/{id}(id=*{id})}" th:method="put" th:object="${movie}">
         <div class="form-group">
           <label class="control-label">Title</label>
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
           <label class="control-label">Running Time</label>
-          <input class="form-control" type="number" th:field="*{running_time}" />
+          <input class="form-control" type="text" th:field="*{running_time}" />
         </div>
         <div class="form-group">
           <label class="control-label">Production Year</label>
