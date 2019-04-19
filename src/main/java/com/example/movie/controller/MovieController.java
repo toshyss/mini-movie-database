@@ -39,7 +39,7 @@ public class MovieController {
 	public String edit(@PathVariable Long id, Model model) {
 		Optional<Movie> movie = movieService.findOne(id);
 		model.addAttribute("movie", movie);
-		return "movie/edit";
+		return "movies/edit";
 	}
 	
 	@GetMapping("{id}")

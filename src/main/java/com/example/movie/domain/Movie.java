@@ -14,7 +14,7 @@ public class Movie {
 	private Long id;
 	private String title;
 	private String running_time;
-	private Date production_year;
+	private String production_year;
 	private String country_of_origin;
 	private String distributing_agency;
 	private String cast;
@@ -38,10 +38,10 @@ public class Movie {
 	public void setRunningTime(String running_time) {
 		this.running_time = running_time;
 	}
-	public Date getProdutionYear() {
+	public String getProdutionYear() {
 		return production_year;
 	}
-	public void setProductionYear(Date production_year) {
+	public void setProductionYear(String production_year) {
 		this.production_year = production_year;
 	}
 	public String getRunning_time() {
@@ -50,10 +50,10 @@ public class Movie {
 	public void setRunning_time(String running_time) {
 		this.running_time = running_time;
 	}
-	public Date getProduction_year() {
+	public String getProduction_year() {
 		return production_year;
 	}
-	public void setProduction_year(Date production_year) {
+	public void setProduction_year(String production_year) {
 		this.production_year = production_year;
 	}
 	public String getCountry_of_origin() {
