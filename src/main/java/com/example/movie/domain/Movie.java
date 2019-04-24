@@ -1,13 +1,11 @@
 package com.example.movie.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
+@Table(name = "movies")
 public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +23,7 @@ public class Movie {
 	@NotEmpty
 	private String distributing_agency;
 	@NotEmpty
-	private String cast;
+	private String movie_cast;
 	private String image;
 	
 	public Long getId() {
@@ -76,11 +74,11 @@ public class Movie {
 	public void setDistributing_agency(String distributing_agency) {
 		this.distributing_agency = distributing_agency;
 	}
-	public String getCast() {
-		return cast;
+	public String getMovie_cast() {
+		return movie_cast;
 	}
-	public void setCast(String cast) {
-		this.cast = cast;
+	public void setMovie_cast(String movie_cast) {
+		this.movie_cast = movie_cast;
 	}
 	public String getImage() {
 		return image;
@@ -96,6 +94,6 @@ public class Movie {
 				", production_year=" + production_year + 
 				", country_of_origin=" + country_of_origin + 
 				", distributing_agency=" + distributing_agency +
-				", cast=" + cast + ", image=" + image;
+				", movie_cast=" + movie_cast + ", image=" + image;
 	}
 }

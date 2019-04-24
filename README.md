@@ -10,7 +10,7 @@ This application is database for keeping movie titles.
 - Spring Data JPA as a mapper
 - Thymeleaf as a template engine
 - Bootstrap as a css framework
-- H2 as a database (may change Postgresql)
+- Postgresql as a database
 - Maven as a package manager
 
 
@@ -19,8 +19,6 @@ This application is database for keeping movie titles.
 Download source code from here. Extract the zip file at any location of choice.
 
 #### Create Schema and Insert Data
-If need to create tables on database. for examples...
-
  - movies table
  
 |Row |Type |Order |Null |Default |
@@ -30,11 +28,57 @@ If need to create tables on database. for examples...
 |running_time |character varying(5) | | | |
 |production_year |character varying(4) | | | |
 |country_of_origin |character varying(20) | | | |
-|distribute_agency |character varying(255) | | | |
-|cast |character varying(255) | | | |
+|distributing_agency |character varying(255) | | | |
+|movie_cast |character varying(255) | | | |
 |image |character varying(255) | | | |
 
 Index: "movies_pkey" PRIMARY KEY, btree (id)
+
+- How to create database and table
+
+* add dependencies in pom.xml
+
+```
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+	<scope>runtime</scope>
+</dependency>
+```
+
+* add these settings
+
+[application.properties]
+
+```
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/movies
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+```
+
+[resources/hibernate.properties]
+
+```
+hibernate.jdbc.lob.non_contextual_creation = true
+```
+
+* run these command in psql
+
+```
+create database movies;
+
+create table movies (
+    "id" serial primary key,
+    "title" character varying(255),
+    "running_time" character varying(5),
+    "production_year" character varying(4),
+    "country_of_origin" character varying(20),
+    "distributing_agency" character varying(255),
+    "movie_cast" character varying(255),
+    "image" character varying(255));
+```
+
 
 ## Running the tests
 

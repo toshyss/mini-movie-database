@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
-    <title>Show Detail</title>
+    <title>Show Detail Movie Data</title>
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.js"></script>
   </head>
   <body>
     <div class="container">
-      <h1>Show Detail</h1>
+      <h1>Show Detail Movie Data</h1>
       <div th:object="${movie}">
         <div>
           <label>ID</label>
@@ -37,7 +37,7 @@
         </div>
         <div>
         	<label>Cast</label>
-        	<p th:text="*{cast}"></p>
+        	<p th:text="movie_cast"></p>
         </div>
         <div>
         	<label>image</label>

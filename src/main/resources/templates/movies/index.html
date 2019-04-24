@@ -19,7 +19,7 @@
             <th>Production Year</th>
             <th>Country of Origin</th>
             <th>Distributing Agency</th>
-            <th>Cast</th>
+            <th>Movie Cast</th>
             <th>Image</th>
             <th>Detail</th>
             <th>Edit</th>
@@ -34,7 +34,7 @@
             <td th:text="*{production_year}"></td>
             <td th:text="*{country_of_origin}"></td>
             <td th:text="*{distributing_agency}"></td>
-            <td th:text="*{cast}"></td>
+            <td th:text="movie_cast"></td>
             <td th:text="*{image}"></td>
             <td><a class="btn btn-default btn-xs" th:href="@{/movies/{id}(id=*{id})}">detail</a></td>
             <td><a class="btn btn-default btn-xs" th:href="@{/movies/{id}/edit(id=*{id})}">edit</a></td>
