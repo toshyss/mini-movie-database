@@ -5,9 +5,10 @@ This application is database for keeping movie titles.
 ## Getting Started
 
 ### Prerequisites
-- Java
+- Java(main) / Kotlin(authentication)
 - Spring Boot
 - Spring Data JPA as a mapper
+- Spring Security as a authentication
 - Thymeleaf as a template engine
 - Bootstrap as a css framework
 - Postgresql as a database
@@ -33,6 +34,19 @@ Download source code from here. Extract the zip file at any location of choice.
 |image |character varying(255) | | | |
 
 Index: "movies_pkey" PRIMARY KEY, btree (id)
+
+- users table
+
+|Row |Type |Order |Null |Default |
+|---|---|---|---|---|
+|id |integer | |not null | |
+|email |character varying(255) | | | |
+|password |character varying(255) | | | |
+|create_at |timestamp without time zone | | | |
+|update_at |timestamp without time zone | | | |
+
+Index: "users_pkey" PRIMARY KEY, btree (id)
+
 
 - How to create database and table
 
@@ -65,6 +79,8 @@ hibernate.jdbc.lob.non_contextual_creation = true
 
 * run these command in psql
 
+* movies テーブル
+
 ```
 create database movies;
 
@@ -77,6 +93,21 @@ create table movies (
     "distributing_agency" character varying(255),
     "movie_cast" character varying(255),
     "image" character varying(255));
+```
+
+* users テーブル（認証機能用）
+
+```$xslt
+create table users (
+    "id" serial primary key,
+    "email" character varying(255),
+    "password" character varying(255),
+    "create_at" timestamp,
+    "update_at" timestamp);
+```
+
+```
+insert into users (email, password, create_at, update_at) values ('test@example.com', 'test', current_timestamp, current_timestamp);
 ```
 
 
