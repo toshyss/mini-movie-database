@@ -79,7 +79,7 @@ hibernate.jdbc.lob.non_contextual_creation = true
 
 * run these command in psql
 
-* movies テーブル
+* movies table (for keeping)
 
 ```
 create database movies;
@@ -95,7 +95,7 @@ create table movies (
     "image" character varying(255));
 ```
 
-* users テーブル（認証機能用）
+* users table (for authentication)
 
 ```$xslt
 create table users (
